@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¿Quieres ser mi San Valentín? 💘</title>
+<title>Feliz aniversario Mojito 💘</title>
 
 <style>
 body {
@@ -24,7 +24,7 @@ body {
 
 h1 {
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 40px;
 }
 
@@ -62,7 +62,7 @@ button {
 <body>
 
 <div class="container">
-    <h1>¿Quieres ser mi persona favorita siempre? 💖</h1>
+    <h1>Feliz aniversario, Mojito &lt;3<br>¿Quieres ver tu regalo?</h1>
     <div class="buttons">
         <button id="yesBtn">Sí 💘</button>
         <button id="noBtn">No 😢</button>
@@ -73,6 +73,7 @@ button {
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 
+// El botón "No" se mueve aleatoriamente al pasar el cursor
 noBtn.addEventListener('mouseover', () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -81,6 +82,7 @@ noBtn.addEventListener('mouseover', () => {
     noBtn.style.top = y + 'px';
 });
 
+// El botón "Sí" abre el PDF
 yesBtn.onclick = function() {
     window.location.href = "amor.pdf";
 };
