@@ -2,78 +2,29 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz aniversario Mojito 💘</title>
-
+<title>Feliz aniversario</title>
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-}
-
-.container {
-    text-align: center;
-}
-
-h1 {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 40px;
-}
-
-.buttons {
-    position: relative;
-}
-
-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 10px;
-}
-
-#yesBtn {
-    background-color: #ff4d6d;
-    color: white;
-}
-
-#yesBtn:hover {
-    background-color: #e63956;
-}
-
-#noBtn {
-    background-color: white;
-    color: #ff4d6d;
-    position: relative;
-}
+  body { font-family: sans-serif; text-align: center; background: #ffe6e6; margin: 0; }
+  #mainScreen { position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  button { padding: 15px 30px; font-size: 20px; cursor: pointer; border-radius: 10px; border: none; margin: 20px; transition: all 0.2s ease; }
+  #yesBtn { background-color: #ff4d6d; color: white; }
+  #noBtn { background-color: #fff; color: #ff4d6d; border: 2px solid #ff4d6d; position: relative; }
 </style>
 </head>
-
 <body>
 
-<div class="container">
-    <h1>Feliz aniversario, Mojito &lt;3<br>¿Quieres ver tu regalo?</h1>
-    <div class="buttons">
-        <button id="yesBtn">Sí 💘</button>
-        <button id="noBtn">No 😢</button>
-    </div>
+<!-- Pantalla inicial -->
+<div id="mainScreen">
+  <h1>Feliz aniversario mojito ❤️<br>¿Quieres ver tu regalo?</h1>
+  <button id="yesBtn">Sí</button>
+  <button id="noBtn">No</button>
 </div>
 
 <script>
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 
-// El botón "No" se mueve aleatoriamente al pasar el cursor
+// Botón "No" que se mueve al pasar el mouse
 noBtn.addEventListener('mouseover', () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -82,10 +33,10 @@ noBtn.addEventListener('mouseover', () => {
     noBtn.style.top = y + 'px';
 });
 
-// El botón "Sí" abre el PDF
-yesBtn.onclick = function() {
-    window.location.href = "amor.pdf";
-};
+// Botón "Sí" abre el PDF amor.pdf en la misma ventana
+yesBtn.addEventListener('click', () => {
+    window.open('amor.pdf', '_blank'); // ← Aquí abrimos tu PDF
+});
 </script>
 
 </body>
